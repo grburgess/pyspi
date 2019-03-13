@@ -22,10 +22,10 @@ install:
   - conda info -a
 
   # Replace dep1 dep2 ... with your dependencies
-  - conda create -q -n test-environment  -c conda-forge python=$TRAVIS_PYTHON_VERSION  numpy scipy matplotlib pytest-cov h5py 
+  - conda create -q -n test-environment  -c conda-forge -c threeML python=$TRAVIS_PYTHON_VERSION  numpy scipy matplotlib codecov  pytest-cov h5py 
   - source activate test-environment
-  - pip install codecov
-  - conda install -c conda-forge -c threeml threeml
+#  - pip install codecov
+  - conda install -c conda-forge -c threeML threeml
   - python setup.py install
 script:
   - source activate test-environment
